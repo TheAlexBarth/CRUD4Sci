@@ -22,7 +22,7 @@ read <- function(input, output, session, pool, reqTable, reqColInTable) {
   
   observe({
     reqTable(input$tableName)
-    cols <- db_query_fields(pool, input$tableName)
+    cols <- dbListFields(pool, input$tableName)
     updateCheckboxGroupInput(session, "select", 
       choices = cols, selected = cols, inline = TRUE)
   })

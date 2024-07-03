@@ -22,7 +22,7 @@ delete <- function(input, output, session, pool, reqTable, reqColInTable, goHome
   
   observe({
     reqTable(input$tableName)
-    cols <- db_query_fields(pool, input$tableName)
+    cols <- dbListFields(pool, input$tableName)
     updateSelectInput(session, "col", choices = cols)
   })
   

@@ -1,4 +1,4 @@
-
+rm(list = ls()) 
 library(shiny)
 library(shinydashboard)
 library(dplyr)
@@ -7,8 +7,9 @@ library(tibble)
 library(pool)
 library(rlang)
 library(DBI)
+library(DT)
 
-source("modules/overview.R", local = TRUE)
+source("./modules/overview.R", local = TRUE)
 source("modules/createTable.R", local = TRUE)
 source("modules/createEntry.R", local = TRUE)
 source("modules/read.R", local = TRUE)

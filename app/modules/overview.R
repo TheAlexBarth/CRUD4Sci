@@ -13,7 +13,7 @@ overview <- function(input, output, session, pool) {
     bullets <- list()
     for (i in seq_len(length(all_tables))) {
       tblName <- all_tables[[i]]
-      fieldNames <- db_query_fields(pool, tblName)
+      fieldNames <- dbListFields(pool, tblName)
       query <- sqlInterpolate(pool, 
                               "SELECT COUNT(*) FROM ?table",
                               .dots =list(table = tblName)
